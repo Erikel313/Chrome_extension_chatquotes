@@ -232,7 +232,7 @@ function main() {
                                         name = nameContainer.getAttribute('data-name');
                                         // time = elRef.parentElement.children[messageIndex].querySelector('span[data-absolute-timestamp]').getAttribute('data-absolute-timestamp');
                                         break;
-                                        // Can extract time, but adding it into static text surrounded by relative time that's rendered in the chats will only confuse people
+                                        // Can exstract time, but adding it into static text surrounded by relative time that's rendered in the chats will only confuse people
                                         
                                     }
                                     messageIndex -= 1;
