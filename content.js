@@ -230,7 +230,7 @@ function main() {
                                     if (elRef.parentElement.children[messageIndex].className.includes('AnmYv')) {
                                         const nameContainer = elRef.parentElement.children[messageIndex].querySelector('[data-hovercard-id], [data-member-id]');
                                         name = nameContainer.getAttribute('data-name');
-                                        time = elRef.parentElement.children[messageIndex].querySelector('span[data-absolute-timestamp]').getAttribute('data-absolute-timestamp');
+                                        // time = elRef.parentElement.children[messageIndex].querySelector('span[data-absolute-timestamp]').getAttribute('data-absolute-timestamp');
                                         break;
                                         // Can extract time, but adding it into static text surrounded by relative time that's rendered in the chats will only confuse people
                                         
