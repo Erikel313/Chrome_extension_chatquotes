@@ -217,7 +217,7 @@ function main() {
                         }
                         if (elRef.className.includes('nF6pT')) {
 
-                            var messageIndex, name, time;
+                            var messageIndex, name;
                             [...elRef.parentElement.children].forEach((messageEl, index) => {
                                 if (messageEl ===  elRef) {
                                     messageIndex = index;
@@ -230,10 +230,9 @@ function main() {
                                     if (elRef.parentElement.children[messageIndex].className.includes('AnmYv')) {
                                         const nameContainer = elRef.parentElement.children[messageIndex].querySelector('[data-hovercard-id], [data-member-id]');
                                         name = nameContainer.getAttribute('data-name');
-                                        time = elRef.parentElement.children[messageIndex].querySelector('span[data-absolute-timestamp]').getAttribute('data-absolute-timestamp');
                                         break;
                                         // Can extract time, but adding it into static text surrounded by relative time that's rendered in the chats will only confuse people
-                                        
+                                        // time = el.Ref.parentElement.children[messageIndex].querySelector('span[data-absolute-timestamp]').getAttribute('data-absolute-timestamp');
                                     }
                                     messageIndex -= 1;
                                 }
@@ -248,7 +247,7 @@ function main() {
                                     return;
                                 }
 
-                                inputEl.innerHTML = makeInputText(name, quoteText, inputEl, messageContainer, time);
+                                inputEl.innerHTML = makeInputText(name, quoteText, inputEl, messageContainer);
                                 inputEl.scrollIntoView();
                                 inputEl.click();
                                 placeCaretAtEnd(inputEl);
@@ -289,7 +288,7 @@ function makeInputText(name, quoteText, inputEl, messageContainer) {
             ("```\n" + quoteText + "\n```\n" + inputEl.innerHTML)
     } else {
 
-        return oneLineQuote ? '`' + name + time +': ' + oneLineQuote + '`\n' :
+        return oneLineQuote ? '`' + name + ': ' + oneLineQuote + '`\n' :
             ("```\n" + name + ":\n" + quoteText + "\n```\n" + inputEl.innerHTML);
     }
 }
